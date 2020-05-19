@@ -1,6 +1,7 @@
 package com.poo.dao;
 
 import com.poo.db.ConexaoDatabase;
+import com.poo.model.Cliente;
 import com.poo.model.Produto;
 import com.poo.model.Venda;
 import java.sql.Connection;
