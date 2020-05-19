@@ -1,0 +1,325 @@
+
+/*--------------------*\
+         BASE
+\*--------------------*/
+html {
+  font-size: 62.5%; /* 10px */
+}
+
+body {
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+}
+
+/*--------------------*\
+  BOTAO
+\*--------------------*/
+.botao {
+  
+  padding: 0.8em 1.2em;
+
+  background-color: #bbb;
+  color: #fff;
+  border: none;
+
+  line-height: normal;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.botao:hover, .botao:focus {
+  background-color: #aaa;
+  color: #fff;
+
+  text-decoration: none;
+}
+
+.botao--principal {
+  border-radius: 10px;
+
+  background-color: #004b86;
+}
+
+.botao--principal:hover, .botao--principal:focus {
+  background-color: #003b6a;
+}
+
+.botao-tabela{
+  margin-top: -5px;
+  padding: 0.8em 1.2em;
+
+  background-color: #bbb;
+  color: #fff;
+  border: none;
+
+  border-radius: 10px;
+  background-color: #004b86;
+
+  line-height: normal;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+/*--------------------*\
+  TITULO-FORMULARIO
+\*--------------------*/
+.titulo-formulario {
+  font-size: 2.6rem;
+  font-weight: normal;
+  color: #004b86;
+}
+.titulo-formulario--venda{
+  font-size: 2.6rem;
+  font-weight: normal;
+  color: #004b86;
+  margin-left: 5%;
+
+}
+
+.titulo-formulario--login{
+	text-align:right;
+    font-weight: normal;
+    color: #004b86;
+}
+
+/*--------------------*\
+     GRUPO-ENTRADA
+\*--------------------*/
+.grupo-entrada {
+  margin-bottom: 15px;
+}
+
+.grupo-entrada > label {
+  display: block;
+
+  font-weight: bold;
+}
+
+
+/*--------------------*\
+        CAMPO
+\*--------------------*/
+.campo {
+  display: block;
+  width: 100%;
+  height: 2.8em;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  background-color: #fff;
+
+  font-size: 1.4rem;
+}
+
+/*--------------------*\
+        LAYOUT
+\*--------------------*/
+.layout-rodape {
+	
+  margin-top: 10%;  
+  padding: 40px 0;
+
+  background-color: #484848;
+
+  color: #red;
+  text-align: center;
+}
+.layout-cabecalho{
+  height: 60px;	
+  border-bottom: 1px solid #ccc;
+  line-height: 60px;
+
+}
+
+/*--------------------*\
+        TABELA
+\*--------------------*/
+
+.tabela {
+
+  margin-right: 5%;
+  margin-left: 5%;
+  width: 90%;
+}
+
+.tabela td, .tabela th {
+  padding: 15px 10px;
+  border: 1px solid #ccc;
+}
+
+.tabela th {
+  background-color: #ececec;
+
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.tabela tr:nth-child(even) {
+  background-color: #f7f7f7;
+}
+
+.tabela tr:hover {
+  background-color: #faffcc;
+}
+.layout-rodape{
+  padding: 40px 0;
+  margin-top: 18%;
+
+  background-color: #484848;
+
+  color: #fff;
+  text-align: center;
+}
+
+.formulario-tabela{
+  padding: 0;
+  background-color: #ccc;
+  margin-left: 30%;
+}
+
+/*--------------------*\
+        CHECKBOX
+\*--------------------*/
+
+.checkbox{
+
+  float: right;
+  margin-right: 100px;
+  margin-top: 10px;
+}
+
+
+/*--------------------*\
+        Login
+\*--------------------*/
+
+.container-login{
+	
+	border: 2px solid red;
+	border-radius: 10px;
+	width: 300px;
+	height: 300px;
+	
+	position: absolute;
+	top:50%;
+	left:50%;
+
+	transform: translate(-50%, -50%)
+	
+}
+
+.img-login {
+margin-left: 35%;
+    	
+}
+
+S
+#id{
+padding: 20px;
+}
+
+.campo-login{
+  display: block;
+  width: 70%;
+  margin-left: 15%;
+  height: 2.8em;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  background-color: #fff;
+
+  font-size: 1.4rem;
+}
+
+.label{
+	margin-left: 15%;
+}
+h5{
+	margin-left: 92px;
+}
+h4{
+	margin-left: 40%;
+}
+
+/*--------------------*\
+     navegacao
+\*--------------------*/
+
+.navegacao{
+	
+}
+
+.navegacao_menu{
+	float: right;	
+}
+
+.menu__itens{
+  margin-top: 15px;
+	
+}
+
+/*--------------------*\
+     Botao-chaveador
+\*--------------------*/
+
+.botao-chaveador{
+	width: 24px;
+	height:24px;
+    border:0;
+    
+    background-color: none;    
+	background-image: url("../imagem/bars.png");
+}
+/*--------------------*\
+         Menu
+\*--------------------*/
+
+  .menu{
+  position: fixed;
+  top: 57px;
+  left: 0;
+  bottom: 0;
+  
+  display: none;
+  width: 280px;
+  border-right: 1px solid #eee;
+  
+  margin:0;
+  font-size: 1.4em;
+  
+  background-color: #fbfbfb;
+  
+  list-style: none;
+  
+  }
+  
+  .menu--exibindo{
+  display: block;
+  }
+  
+  .menu__itens{
+  display: block;
+  
+ }
+
+.layout-rodape-cos{
+	 padding: 40px 0;
+	
+  background-color: #484848;
+
+  color: #fff;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
