@@ -1,4 +1,4 @@
-package br.com.pi2020.control;
+package com.poo.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.pi2020.control.model.dao.ProdutoDao;
+import com.poo.dao.ProdutoDao;
 
 
 @WebServlet("/gerenciarProdutoServlet")

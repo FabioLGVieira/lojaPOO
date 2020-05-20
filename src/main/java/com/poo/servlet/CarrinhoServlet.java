@@ -1,4 +1,4 @@
-package br.com.pi2020.control;
+package com.poo.servlet;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -11,9 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.pi2020.control.model.dao.VendaDao;
-import br.com.pi2020.model.domain.Cliente;
-import br.com.pi2020.model.domain.Venda;
+import com.poo.dao.VendaDao;
+import com.poo.model.Cliente;
+import com.poo.model.Venda;
 
 /**
  * Servlet implementation class CarrinhoServlet
@@ -70,7 +70,7 @@ public class CarrinhoServlet extends HttpServlet {
 		 request.setAttribute("mensagem","Venda finalizada com sucesso!!!");
 		 
 		} else {
-			 request.setAttribute("mensagem","Venda Já efetuada!!!");
+			 request.setAttribute("mensagem","Venda Jï¿½ efetuada!!!");
 			
 		}
 	  } catch (SQLException e) {
