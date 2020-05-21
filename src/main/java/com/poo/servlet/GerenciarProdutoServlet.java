@@ -37,7 +37,7 @@ public class GerenciarProdutoServlet extends HttpServlet {
 			
 			request.setAttribute("mensagem", "Erro de driver");
 		} 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/gerenciarProduto.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/gerenciarProduto.jsp");
 	    dispatcher.forward(request, response);
 	}
 

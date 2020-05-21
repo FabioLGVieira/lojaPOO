@@ -33,7 +33,7 @@ public class BuscarFuncionarioServlet extends HttpServlet {
            request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
 			
        }
-     	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/buscaFuncionario.jsp");
+     	   RequestDispatcher dispatcher = request.getRequestDispatcher("/buscaFuncionario.jsp");
            dispatcher.forward(request, response);
 	}  
 	 

@@ -40,7 +40,7 @@ public class GerenciarClienteServlet extends HttpServlet {
 
             request.setAttribute("mensagem", "Erro de driver");
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/gerenciarCliente.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/gerenciarCliente.jsp");
         dispatcher.forward(request, response);
     }
 }

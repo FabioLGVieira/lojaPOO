@@ -23,6 +23,7 @@ public class BuscarClienteServlet extends HttpServlet {
 	
 	 
 
+        @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		try {
@@ -33,7 +34,7 @@ public class BuscarClienteServlet extends HttpServlet {
 			request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
 			
 	   }
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/buscaCliente.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/buscaCliente.jsp");
 		dispatcher.forward(request, response);  
 	} 
 	

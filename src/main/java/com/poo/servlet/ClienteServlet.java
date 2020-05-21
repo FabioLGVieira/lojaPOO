@@ -39,7 +39,7 @@ public class ClienteServlet extends HttpServlet {
 
             request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage());
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/editarCliente.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/editarCliente.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -94,7 +94,7 @@ public class ClienteServlet extends HttpServlet {
             request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage());
             request.setAttribute("cliente", cliente);
         }
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/cliente.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/cliente.jsp");
         dispatcher.forward(request, response);
 
     }

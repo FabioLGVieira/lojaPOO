@@ -36,7 +36,7 @@ public class BuscarProdutoServlet extends HttpServlet {
 	   request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
 			
 	}
-	   RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/buscaProduto.jsp");
+	   RequestDispatcher dispatcher = request.getRequestDispatcher("/buscaProduto.jsp");
   	   dispatcher.forward(request, response);
 	}
 } 

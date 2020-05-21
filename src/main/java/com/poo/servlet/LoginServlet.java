@@ -36,7 +36,7 @@ public class LoginServlet extends HttpServlet {
                 funcionario = funcionarioDao.validar(nome, senha);
                 if (funcionario.getNome() != null && funcionario.getSenha() != null) {
                     request.setAttribute("mensagem", "Bem vindo " + ", " + funcionario.getNome());
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/paginas/menuu.jsp");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/menuu.jsp");
                     dispatcher.forward(request, response);
                 } else {
                     request.setAttribute("mensagem", "Nome ou senha invalido");
