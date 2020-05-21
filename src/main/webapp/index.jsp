@@ -42,7 +42,7 @@
       </div>
     </header>
      <h4 class="titulo-formulario">${mensagem}</h4>
-    <img class="img-cosmeticos" src="imagem/cosmeticos_perfumaria.jpg" width="100%" height="100%" >
+    <img id="img" src="imagem/perf1.jpg" height="600" width="600" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
     
     <script src="javaScripts/app.js"></script>
     
@@ -50,4 +50,26 @@
         <p>&copy; Muchachos. Todos os direitos reservados.</p>
      </footer>   
  </body>
+ 
+    <script>
+        var images = [];
+        images[0] = "imagem/perf1.jpg";
+        images[1] = "imagem/perf2.jpg";
+        images[2] = "imagem/perf3.jpg";
+        images[3] = "imagem/perf4.jpg";
+        images[4] = "imagem/perf5.jpg";
+        images[5] = "imagem/cosmeticos_perfumaria.jpg";
+
+        var i = 0;
+        setInterval(fadeDivs, 2000);
+
+        function fadeDivs() {
+            i = i < images.length-1 ? i : 0;
+            console.log(i);
+            $('#img').fadeOut(500, function () {
+                $(this).attr('src', images[i]).fadeIn(500);
+            })
+            i++;
+        }
+    </script>
 </html>

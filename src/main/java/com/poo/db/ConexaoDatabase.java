@@ -22,7 +22,7 @@ public class ConexaoDatabase {
 
     public static Connection getConexao() throws SQLException {
         String dbURL = "jdbc:derby://localhost:1527/BD_POO;create=true";
-        String user = "admin";
+        String user = "admin1";
         String password = "admin";
         return DriverManager.getConnection(dbURL, user, password);
     }    

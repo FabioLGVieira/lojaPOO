@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.poo.dao.ProdutoDao;
 
-
+/**
+ * 15/05/2020 21:00
+ * @author Fabio
+ */
 @WebServlet("/gerenciarProdutoServlet")
 public class GerenciarProdutoServlet extends HttpServlet {
 	
