@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.poo.servlet;
 
 import com.poo.dao.FuncionarioDao;
@@ -33,7 +28,7 @@ public class BuscarFuncionarioServlet extends HttpServlet {
            request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
 			
        }
-     	   RequestDispatcher dispatcher = request.getRequestDispatcher("/buscaFuncionario.jsp");
+     	   RequestDispatcher dispatcher = request.getRequestDispatcher("/BuscarFuncionario.jsp");
            dispatcher.forward(request, response);
 	}  
 	 
