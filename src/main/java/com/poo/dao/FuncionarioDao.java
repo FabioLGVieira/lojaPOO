@@ -148,7 +148,7 @@ public class FuncionarioDao {
 	}	
   
 	      public static List<Funcionario> buscar(String busca)throws SQLException, Exception {
-		  String sql = "SELECT * FROM cadastroFuncionario WHERE id like ? or nome like ? or cpf like ? \n"
+		  String sql = "SELECT * FROM cadastroFuncionario WHERE  nome like ? or cpf like ? \n"
 		  		+ " or situacao like ? or cargo like ? or filial like ? or departamento like ? ";
 		  busca = busca+ '%';
 		  
@@ -169,7 +169,7 @@ public class FuncionarioDao {
 			ps.setString(4, busca);
 			ps.setString(5, busca);
 			ps.setString(6, busca);
-			ps.setString(7, busca);
+		
 			
 			
 			rs = ps.executeQuery();

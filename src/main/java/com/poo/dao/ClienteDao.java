@@ -131,9 +131,8 @@ public class ClienteDao {
     }
 
     public static List<Cliente> buscar(String busca) throws SQLException, Exception {
-        String sql = "SELECT id,nome,cpf,telefone,email,situacao FROM cadastroCliente "
-                + " WHERE id like ? or nome like ? or cpf like ?";
-        busca = busca + '%';
+        String sql = "SELECT * FROM cadastroCliente WHERE  nome like ? or cpf like ?";
+        busca = busca+ '%';
 
         List<Cliente> listaCliente = null;
 
@@ -148,7 +147,7 @@ public class ClienteDao {
             ps = conexao.prepareStatement(sql);
             ps.setString(1, busca);
             ps.setString(2, busca);
-            ps.setString(3, busca);
+   
 
             rs = ps.executeQuery();
 
@@ -156,14 +155,14 @@ public class ClienteDao {
                 if (listaCliente == null) {
                     listaCliente = new ArrayList<>();
                 }
-                int idCliente = rs.getInt("idCliente");
+                int id = rs.getInt("id");
                 String nome = rs.getString("nome");
                 String cpf = rs.getString("cpf");
                 String telefone = rs.getString("telefone");
                 String email = rs.getString("email");
                 String situacao = rs.getString("situacao");
 
-                Cliente C = new Cliente(idCliente, nome, cpf, telefone, email, situacao);
+                Cliente C = new Cliente(id, nome, cpf, telefone, email, situacao);
                 listaCliente.add(C);
             }
 

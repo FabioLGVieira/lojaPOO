@@ -103,7 +103,7 @@ public class ProdutoDao {
 	}	
   
 	      public static List<Produto> buscar(String busca)throws SQLException, Exception {
-		  String sql = "SELECT * FROM cadastroProduto WHERE idProduto like ? or nome like ? or preco like ? or quantidade like ?  or categoria like ?";
+		  String sql = "SELECT * FROM cadastroProduto WHERE   nome like ? or categoria like ?";
 		  busca = busca+ '%';
 		  
 		  List <Produto> listaProduto = null;
@@ -119,15 +119,12 @@ public class ProdutoDao {
 			ps = conexao.prepareStatement(sql);
 			ps.setString(1, busca);
 			ps.setString(2, busca);
-			ps.setString(3, busca);
-			ps.setString(4, busca);
-			ps.setString(5, busca);
 			
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
 				if(listaProduto == null) {
-					listaProduto = new ArrayList<Produto>();
+					listaProduto = new ArrayList<>();
 				}
 				int idProduto = rs.getInt("idProduto");
 				String nome = rs.getString("nome");
