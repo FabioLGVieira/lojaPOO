@@ -1,9 +1,9 @@
 CREATE TABLE cadastroFuncionario (
-	idCliente iNT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    id iNT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
     nome VARCHAR(255) NOT NULL,
     cpf VARCHAR(255) NOT NULL,
     rg VARCHAR(255),
-	sexo VARCHAR(20),
+    sexo VARCHAR(20),
     estadoCivil VARCHAR(255) NOT NULL,
     dataNascimento VARCHAR(255) NOT NULL,
     estado VARCHAR(255) NOT NULL,
@@ -19,11 +19,11 @@ CREATE TABLE cadastroFuncionario (
     cargo VARCHAR(255),
     filial VARCHAR(255),
     departamento VARCHAR(255),
-    PRIMARY KEY(idcliente)
+    PRIMARY KEY(id)
     );
 
 CREATE TABLE cadastroCliente (
-	id iNT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    id INT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
     nome VARCHAR(255) NOT NULL,
     cpf VARCHAR(255) NOT NULL,
     rg VARCHAR(255),
@@ -43,7 +43,7 @@ CREATE TABLE cadastroCliente (
     );
     
     CREATE TABLE cadastroProduto (
-	idProduto iNT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    idProduto iNT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
     nome VARCHAR(255) NOT NULL,
     preco float not null,
     quantidade int not null,
@@ -55,9 +55,9 @@ CREATE TABLE cadastroCliente (
     );
    
 CREATE TABLE Venda (
-	idVenda iNT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
+    idVenda iNT NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
     data VARCHAR(10) not null,
-	pagamento varchar(255),
+    pagamento varchar(255),
     parcela int,
     subTotal float not null,
     idCliente int,
@@ -68,7 +68,7 @@ CREATE TABLE Venda (
     
     alter table venda
     add foreign key(idCliente)
-    references cadastrocliente(idCurso);
+    references cadastrocliente(id);
     
      alter table venda
     add foreign key(idFuncionario)

@@ -20,10 +20,11 @@ import javax.servlet.http.HttpServletResponse;
 public class ProdutoServlet extends HttpServlet {
 	
 	
-	private ProdutoDao produtoDao = new ProdutoDao();
+	private final ProdutoDao produtoDao = new ProdutoDao();
 	private static final long serialVersionUID = 1L;
    
 	
+        @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String acao = request.getParameter("acao");
 		String id = request.getParameter("id");
@@ -47,6 +48,7 @@ public class ProdutoServlet extends HttpServlet {
 	}
 
 	
+        @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		
@@ -91,7 +93,7 @@ public class ProdutoServlet extends HttpServlet {
 			request.setAttribute("mensagem", "Erro de Driver: " + e.getMessage());
 			 request.setAttribute("produto", produto);
 	    }
-		RequestDispatcher dispatcher = request.getRequestDispatcher("//WEB-INF/paginas/produto.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/produto.jsp");
 		dispatcher.forward(request, response);
 		
 	   }

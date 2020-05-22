@@ -18,7 +18,7 @@ public class ClienteDao {
     public List<Cliente> getCliente() throws SQLException, ClassNotFoundException {
 
         Connection conexao = ConexaoDatabase.getConexao();
-        PreparedStatement ps = conexao.prepareStatement("SELECT idCliente, nome, Cpf, Rg, Sexo,"
+        PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, Cpf, Rg, Sexo,"
                 + "estadoCivil, dataNascimento, Estado, Cidade, bairro, Logradouro, Numero,complemento, Telefone,"
                 + "Email, situacao FROM cadastroCliente");
 
@@ -63,10 +63,10 @@ public class ClienteDao {
 
     public List<Cliente> getCliente1() throws SQLException, ClassNotFoundException {
         Connection conexao = ConexaoDatabase.getConexao();
-        PreparedStatement ps = conexao.prepareStatement("Select idCliente, nome, cpf, telefone, email, situacao from cadastroCliente");
+        PreparedStatement ps = conexao.prepareStatement("Select id, nome, cpf, telefone, email, situacao from cadastroCliente");
 
         ResultSet rs = ps.executeQuery();
-        List<Cliente> clientes = new ArrayList<Cliente>();
+        List<Cliente> clientes = new ArrayList<>();
 
         while (rs.next()) {
             clientes.add(new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
@@ -80,7 +80,7 @@ public class ClienteDao {
     public void excluir(Integer cod) throws ClassNotFoundException, SQLException {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement statement = conexao.prepareStatement(
-                "DELETE FROM cadastroCliente WHERE idCliente = ?");
+                "DELETE FROM cadastroCliente WHERE id = ?");
 
         statement.setInt(1, cod);
         statement.execute();
@@ -88,9 +88,9 @@ public class ClienteDao {
 
     public Cliente getClienteId(Integer cod) throws SQLException, ClassNotFoundException {
         Connection conexao = ConexaoDatabase.getConexao();
-        PreparedStatement ps = conexao.prepareStatement("SELECT idCliente, nome, Cpf, Rg, Sexo,"
+        PreparedStatement ps = conexao.prepareStatement("SELECT id, nome, Cpf, Rg, Sexo,"
                 + "estadoCivil, dataNascimento, Estado, Cidade, bairro, Logradouro, Numero,complemento, Telefone,"
-                + "Email, Situacao FROM cadastroCliente WHERE idCliente=?");
+                + "Email, Situacao FROM cadastroCliente WHERE id=?");
         ps.setInt(1, cod);
         ResultSet rs = ps.executeQuery();
 
@@ -108,7 +108,7 @@ public class ClienteDao {
         Connection conexao = ConexaoDatabase.getConexao();
         PreparedStatement statement = conexao.prepareStatement(
                 " UPDATE cadastroCliente SET nome=?, cpf=?, rg=?, sexo=?, estadoCivil=?, dataNascimento=?, estado=?, cidade=?, bairro=?,  logradouro=?,"
-                + " numero=?,complemento=?, telefone=?,email=?, situacao=? WHERE idCliente=?");
+                + " numero=?,complemento=?, telefone=?,email=?, situacao=? WHERE id=?");
 
         statement.setString(1, cliente.getNome());
         statement.setString(2, cliente.getCpf());
@@ -131,8 +131,8 @@ public class ClienteDao {
     }
 
     public static List<Cliente> buscar(String busca) throws SQLException, Exception {
-        String sql = "SELECT idCliente,nome,cpf,telefone,email,situacao FROM cadastroCliente "
-                + " WHERE idCliente like ? or nome like ? or cpf like ?";
+        String sql = "SELECT id,nome,cpf,telefone,email,situacao FROM cadastroCliente "
+                + " WHERE id like ? or nome like ? or cpf like ?";
         busca = busca + '%';
 
         List<Cliente> listaCliente = null;
@@ -154,7 +154,7 @@ public class ClienteDao {
 
             while (rs.next()) {
                 if (listaCliente == null) {
-                    listaCliente = new ArrayList<Cliente>();
+                    listaCliente = new ArrayList<>();
                 }
                 int idCliente = rs.getInt("idCliente");
                 String nome = rs.getString("nome");
@@ -167,7 +167,7 @@ public class ClienteDao {
                 listaCliente.add(C);
             }
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.getMessage();
             System.out.println(e);
         } finally {
