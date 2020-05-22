@@ -19,10 +19,7 @@
     <body>
         <header class="layout-cabecalho layout-cabecalho--tabela">
             <div class="container">
-                <nav class="navegacao  ">
-                    <a href="menu.jsp"><img src="imagem/logo.png" width="60"
-                                            height="55" alt="Muchachos" title="HOME" /></a>
-                </nav>
+                 <%@ include file="botoes.txt" %> 
             </div>
         </header>
 
@@ -81,4 +78,5 @@
             </div>
         </footer>
     </body>
+    <script src="javaScripts/app.js"></script>
 </html>
