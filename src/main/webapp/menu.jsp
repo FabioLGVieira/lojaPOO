@@ -13,15 +13,14 @@
        
 </head>
 <body>
-
-    <header class="layout-cabecalho layout-cabecalho--tabela">
+    
+   <header class="layout-cabecalho layout-cabecalho--tabela">
       <div class="container">
-      
+        
        <nav class="navegacao">
           <a href="menu.jsp"><img class="img" src="imagem/logo.png" title="HOME"  width="60" height="55" alt="Muchachos" /></a>
          <div class="navegacao_menu">
              <button class="botao-chaveador js-botao-chaveador"></button>
-             
             <ul  class="menu    js-menu">
              <li class="menu__itens"><a href="funcionarioServlet">Cadastro de Funcionario</a><br></li>
              <li class="menu__itens"><a href="gerenciarFuncionarioServlet">Consulta de Funcionario</a><br></li>
@@ -37,6 +36,7 @@
           </nav>
       </div>
     </header>
+    <h4 class="titulo-formulario">${mensagem}</h4>
     
     <img class="img-cosmeticos" src="imagem/cosmeticos_perfumaria.jpg" width="100%" height="100%" >
     

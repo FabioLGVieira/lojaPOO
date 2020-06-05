@@ -17,9 +17,12 @@
 
     </head>
     <body>
-        <header class="layout-cabecalho layout-cabecalho--tabela">
+        <header class="layout-cabecalho">
             <div class="container">
-                 <%@ include file="botoes.txt" %> 
+                <nav class="navegacao">
+                    <a href="menu.jsp"><img src="imagem/logo.png"
+                     title="HOME" width="60" height="55" alt="Muchachos" /></a>
+                </nav>
             </div>
         </header>
 

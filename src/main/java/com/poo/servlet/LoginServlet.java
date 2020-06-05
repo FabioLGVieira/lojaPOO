@@ -17,7 +17,6 @@ import com.poo.model.Funcionario;
  *
  * @author Diego Souza de Queiroz
  */
-
 @WebServlet("/loginServlet")
 public class LoginServlet extends HttpServlet {
 
@@ -36,7 +35,7 @@ public class LoginServlet extends HttpServlet {
                 funcionario = funcionarioDao.validar(nome, senha);
                 if (funcionario.getNome() != null && funcionario.getSenha() != null) {
                     request.setAttribute("mensagem", "Bem vindo " + ", " + funcionario.getNome());
-                    RequestDispatcher dispatcher = request.getRequestDispatcher("/menuu.jsp");
+                    RequestDispatcher dispatcher = request.getRequestDispatcher("/menu.jsp");
                     dispatcher.forward(request, response);
                 } else {
                     request.setAttribute("mensagem", "Nome ou senha invalido");
