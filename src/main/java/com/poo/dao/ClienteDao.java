@@ -131,8 +131,8 @@ public class ClienteDao {
     }
 
     public static List<Cliente> buscar(String busca) throws SQLException, Exception {
-        String sql = "SELECT * FROM cadastroCliente WHERE  nome like ? or cpf like ?";
-        busca = busca+ '%';
+        String sql = "SELECT * FROM cadastroCliente WHERE  upper(nome) like ? or upper(cpf) like ?";
+        busca = '%' + busca + '%';
 
         List<Cliente> listaCliente = null;
 
@@ -145,9 +145,8 @@ public class ClienteDao {
         try {
             conexao = ConexaoDatabase.getConexao();
             ps = conexao.prepareStatement(sql);
-            ps.setString(1, busca);
-            ps.setString(2, busca);
-   
+            ps.setString(1, busca.toUpperCase());
+            ps.setString(2, busca.toUpperCase());
 
             rs = ps.executeQuery();
 

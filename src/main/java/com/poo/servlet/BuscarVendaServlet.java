@@ -22,10 +22,12 @@ public class BuscarVendaServlet extends HttpServlet {
 
     VendaDao vendaDao = new VendaDao();
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             List<Venda> listaVenda = VendaDao.buscar(request.getParameter("Busca"));
             request.setAttribute("listaVenda", listaVenda);
+            request.setAttribute("vendas", vendaDao.getVenda());
 
         } catch (Exception e) {
             request.setAttribute("mensagem", "Erro de banco de dados: " + e.getMessage());
