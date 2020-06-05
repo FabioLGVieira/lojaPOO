@@ -20,7 +20,7 @@ import com.poo.model.Venda;
  */
 @WebServlet("/carrinhoServlet")
 public class CarrinhoServlet extends HttpServlet {
-	  private VendaDao vendaDao = new VendaDao();
+	  private final VendaDao vendaDao = new VendaDao();
 	private static final long serialVersionUID = 1L;
     
 	    @Override
@@ -34,12 +34,12 @@ public class CarrinhoServlet extends HttpServlet {
 	        
 	        int qtd = Integer.parseInt(qtdItem);
 	        int idCliente = Integer.parseInt(CodCliente);
-	        List<Cliente> cliente = new ArrayList<Cliente>();
+	        List<Cliente> cliente = new ArrayList<>();
 	        float total = Float.parseFloat(subTotal);
 	        try {
 	           cliente = VendaDao.obterCliente(idCliente);
 	        } catch (Exception e) {
-	             e.printStackTrace();
+                     System.out.println(e);
 	        }
 	                
 	        request.setAttribute("cliente", cliente);
@@ -52,6 +52,7 @@ public class CarrinhoServlet extends HttpServlet {
 	                .forward(request, response);            
 	    }
 
+          @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String data = request.getParameter("data");
@@ -80,8 +81,7 @@ public class CarrinhoServlet extends HttpServlet {
 	
 		 
     } catch (ClassNotFoundException e) {
-	
-		e.printStackTrace();
+            System.out.println(e);
 	}
   }
 }
