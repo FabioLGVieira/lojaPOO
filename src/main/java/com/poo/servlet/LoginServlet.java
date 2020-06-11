@@ -24,6 +24,7 @@ public class LoginServlet extends HttpServlet {
     private FuncionarioDao funcionarioDao = new FuncionarioDao();
     private Funcionario funcionario = new Funcionario();
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String accion = request.getParameter("accion");
